@@ -1,0 +1,149 @@
+body {
+    height: 100dvh;
+    width: 100dvw;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    width: 380px;
+    
+    height: fit-content;
+    text-align: center;
+    font-size: 1.5em;
+    
+    font-weight: bold;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%)
+}
+
+.title {
+    background-color: #42445A;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px 0;
+    border-radius: 10px;
+    color: whiteSmoke;
+    
+}
+
+.flex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    flex: calc((380px - 30px) / 3);
+    max-width: calc((380px - 30px) / 3);
+    height: calc((380px - 30px) / 3);
+    background-color: #eee;
+    display: inline-block;
+    transition: .3s ease-in-out all;
+    text-align: center;
+    
+    margin: 5px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border-radius: 10px
+}
+
+.box:active {
+    background-color: #42445A;
+    color: whitesmoke;
+}
+
+.notice, .again {
+    width: 70%;
+    padding: 10px 0;
+    background-color: #42445A;
+    color: whitesmoke;
+    position: relative;
+    top: 50px;
+    z-index: -11;
+    opacity: 0;
+    font-size: 0.7em;
+    border-radius: 10px;
+    font-weight: bold
+}
+
+.again {
+    outline: none;
+    border: none;
+}
+
+.notice {
+    background-color: rgba(66, 68, 90, 0.7);
+}
+
+
+.show {
+    animation: show ease .3s forwards
+}
+
+.hide {
+    animation: hide ease .3s forwards
+}
+
+
+
+@keyframes show {
+    from {
+        top: 100px;
+        opacity: 0
+    }
+    
+    to {
+        top: 50px;
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes hide {
+    from {
+        top: 50px;
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    to {
+        top: 100px;
+        opacity: 0;
+        z-index: -20;
+    }
+}
+
+.bg-gray {
+    background-color: #42445A;
+    color: whitesmoke;
+}
+
+.bg-blue {
+    background-color: #0064FF;
+    color: whitesmoke;
+}
+
+.bg-red {
+    background-color: #e91e63;
+    color: whitesmoke;
+}
+
+.bg-draw {
+    background-color: #00bcd4;
+}
+
+.bg-win {
+    color: #FFD400;
+    text-shadow: 0 0 30px #FFFF00;
+}
